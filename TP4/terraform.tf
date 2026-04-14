@@ -8,6 +8,12 @@ terraform {
             version = "~> 5.0"
         }
     }
+    backend "s3" {
+    bucket = "tf-flavie-promo-2026-state"
+    key = "flavie/project.tfstate"
+    region = "us-east-1"
+    use_lockfile = true
+ }
 }
 
 provider "aws" {
@@ -19,3 +25,4 @@ provider "aws" {
         }
     }
 }
+
