@@ -1,32 +1,27 @@
 # terraform.tf : bloc terraform {} + provider aws + default_tags
 terraform {
-    required_version = ">= 1.10.0"
-    
-    required_providers {
-        aws = {
-            source = "hashicorp/aws"
-            version = "~> 5.0"
-        }
+  required_version = ">= 1.10.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
-    backend "s3" {
-    bucket = "tf-flavie-promo-2026-state"
-    key = "flavie/project.tfstate"
-    region = "us-east-1"
+  }
+  backend "s3" {
+    bucket       = "tf-flavie-promo-2026-state"
+    key          = "flavie/project.tfstate"
+    region       = "us-east-1"
     use_lockfile = true
- }
+  }
 }
 
 provider "aws" {
-    region = var.region
-    default_tags {
-        tags = {
-            StudentName = var.student_name
-            PromoName = var.promo_name
-        }
+  region = var.region
+  default_tags {
+    tags = {
+      StudentName = var.student_name
+      PromoName   = var.promo_name
     }
-}
-
-import {
- to = aws_security_group.imported
- id = "sg-00215bd60400af3e6"
+  }
 }
