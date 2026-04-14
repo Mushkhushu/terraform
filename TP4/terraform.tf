@@ -26,3 +26,7 @@ provider "aws" {
     }
 }
 
+import {
+ to = aws_security_group.imported
+ id = "sg-00215bd60400af3e6"
+}

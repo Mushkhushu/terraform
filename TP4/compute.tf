@@ -30,3 +30,21 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 }
+
+resource "aws_security_group" "imported" {
+    name = "tf-flavie-dev-sg-import"
+    description = "SG importe depuis la console"
+    vpc_id = aws_vpc.main.id
+    ingress {
+    from_port = 443
+    to_port = 443
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+    egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+ }
+}
