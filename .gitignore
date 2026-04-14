@@ -8,7 +8,7 @@
 *.tfstate.*
 
 # TFLinter
-.tflint.da
+.tflint.d
 
 # AWS secrets
 .aws/credentials
