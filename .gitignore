@@ -10,6 +10,9 @@
 # TFLinter
 .tflint.d
 
+# sigstore
+.sigstore/root/
+
 # AWS secrets
 .aws/credentials
 
