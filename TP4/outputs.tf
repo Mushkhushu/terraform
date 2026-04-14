@@ -39,5 +39,6 @@ output "instance_url" {
 
 output "ssh_command" {
   description = "Commande SSH pour se connecter à l'instance"
-  value       = "ssh -i ~/.ssh/id_rsa_tp2 ubuntu@${aws_instance.web.public_ip}"
+  #  value       = "ssh -i ~/.ssh/id_rsa_tp2 ubuntu@${aws_instance.web.public_ip}"
+  value = "ssh -i ~/.ssh/id_rsa_tp4 ubuntu@${aws_instance.web.public_ip}"
 }
