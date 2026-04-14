@@ -3,9 +3,17 @@
 .TP1/.terraform/
 .TP2/.terraform/
 .terraform.d/
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+# User config
+.bash_history
+.bash_logout
+.bashrc
+.lesshst
+.profile
 
 # TFLinter
 .tflint.d
@@ -58,3 +66,8 @@ terraform.rc
 # Uncomment the line below if you want to ignore planout files.
 # planout
 .gitconfig
+.bash_history
+.bash_logout
+.bashrc
+.lesshst
+.profile
